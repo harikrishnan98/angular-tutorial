@@ -1,0 +1,27 @@
+<div class="top-menu">
+
+  <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+
+<div class="demo">
+  <button (click)="onEditCourse()">Edit Course</button>
+</div>
+
+<div>
+
+  <div class="courses bottom-menu">
+
+    <course-card *ngFor="let course of (courses | filterCategory : 'BEGINNER')" [course]="course" type="beginner"
+      (courseChanged)="save($event)">
+
+      <course-image [src]="course.iconUrl"></course-image>
+    </course-card>
+
+  </div>
+  <div class="bottom-menu">
+    <h1>SAMPLE STYLE</h1>
+  </div>
+
+</div>
